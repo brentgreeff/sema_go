@@ -16,6 +16,12 @@ b() {
   set +x
 }
 
+dash() {
+  set -x
+  pose exec api bash
+  set +x
+}
+
 down() {
   set -x
   pose down "$@"

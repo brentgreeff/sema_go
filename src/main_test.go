@@ -3,14 +3,19 @@ package main
 import "testing"
 
 func TestSum(t *testing.T) {
-  if add(2, 5) != 7 {
-    t.Fail()
+  want := 7
+  if got := add(2, 5); got != want {
+    t.Errorf("add(2, 5) = %d, want %d", got, want)
   }
-  if add(2, 100) != 102 {
-    t.Fail()
+
+  want2 := 102
+  if got := add(2, 100); got != want2 {
+    t.Errorf("add(2, 100) = %d, want %d", got, want2)
   }
-  if add(222, 100) != 322 {
-    t.Fail()
+
+  want3 := 322
+  if got := add(222, 100); got != want3 {
+    t.Errorf("add(2, 5) = %d, want %d", got, want3)
   }
 }
 
