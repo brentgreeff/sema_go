@@ -1,0 +1,9 @@
+version: '3'
+services:
+
+  api:
+    build: .
+    volumes:
+      - ./src:/go/src/mathapp
+    ports:
+      - "8010:8010"
