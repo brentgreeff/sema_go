@@ -12,7 +12,7 @@ blocks:
           commands:
             - checkout
             - echo "$DOCKER_PASSWORD" | docker login  --username "$DOCKER_USERNAME" --password-stdin
-            - 'docker build -t quench/mathapp:latest -f Dockerfile.deploy .'
+            - 'docker build -t quench/mathapp:latest -f Dockerfile.prod .'
             - 'docker push quench/mathapp:latest'
       secrets:
         - name: DOCKER_CRED
