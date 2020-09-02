@@ -16,4 +16,4 @@ blocks:
             - 'docker build -f Dockerfile.deploy --cache-from $DOCKER_USERNAME/mathapp:latest -t $DOCKER_USERNAME/mathapp:latest .'
             - 'docker push $DOCKER_USERNAME/mathapp:latest'
       secrets:
-        - name: DOCKER_USENAME
+        - name: DOCKER_CRED
