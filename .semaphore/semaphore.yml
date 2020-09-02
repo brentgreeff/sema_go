@@ -21,6 +21,8 @@ blocks:
           value: 'on'
         - name: GOFLAGS
           value: '-mod=vendor'
+      secrets:
+        - name: DOCKER_CRED
   - name: Test
     task:
       env_vars:
