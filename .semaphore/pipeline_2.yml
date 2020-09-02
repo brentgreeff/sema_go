@@ -12,7 +12,8 @@ blocks:
           commands:
             - checkout
             - echo "$DOCKER_PASSWORD" | docker login  --username "$DOCKER_USERNAME" --password-stdin
-            - 'docker build -t quench/mathapp:latest -f Dockerfile.prod .'
+            - 'docker pull quench/mathapp:latest'
+            - 'docker build -f Dockerfile.prod --cache-from quench/mathapp:latest -t quench/mathapp:latest .'
             - 'docker push quench/mathapp:latest'
       secrets:
         - name: DOCKER_CRED
