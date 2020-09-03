@@ -8,7 +8,7 @@ blocks:
   - name: Deploy
     task:
       jobs:
-        - name: 'Job #1'
+        - name: Deploy
           commands:
             - docker stack deploy --with-registry-auth -c docker-stack.yml feed
       secrets:
