@@ -1,0 +1,15 @@
+version: v1.0
+name: Pipeline 3
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Deploy
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - docker stack deploy --with-registry-auth -c docker-stack.yml feed
+      secrets:
+        - name: DOCKER_CRED
