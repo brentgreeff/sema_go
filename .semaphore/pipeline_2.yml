@@ -15,5 +15,8 @@ blocks:
             - 'docker pull quench/mathapp:latest'
             - 'docker build -f Dockerfile.prod --cache-from quench/mathapp:latest -t quench/mathapp:latest .'
             - 'docker push quench/mathapp:latest'
+            - aws
+            - eval $(docker-machine env swarm-vm1)
+            - doc service update --image quench/mathapp:latest feed_download
       secrets:
         - name: DOCKER_CRED
